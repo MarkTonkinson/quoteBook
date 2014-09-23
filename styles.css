@@ -1,0 +1,57 @@
+body {
+  background-color:black;
+  color:white;
+  text-align: center;
+  font-size: 4rem;
+  display:float;
+
+}
+aside {
+	float:left;
+	width:40%;
+}
+
+.quotes {
+	float:right;
+	width:40%;
+	margin:0;
+}
+
+button {
+	display:block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom:40px;
+	background-color:rgba(100,100,100,1);
+	height:50px;
+	width:100px;
+}
+
+input {
+	display:flex;
+	height:20px;
+	width:200px;
+
+}
+div > button {
+	display: inline-block;
+	height:20px;
+}
+ul {
+	margin-top:0;
+	margin-right:100px;
+	list-style: none;
+	padding-left:0;
+	background-color:white;
+	color:black;
+}
+
+li {
+	display:flex;
+	font-size: 2rem;
+	border: 1px solid black;
+	list-style-type: none;
+	padding:30px;
+	margin-top:0;
+}
+

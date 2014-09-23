@@ -23,9 +23,10 @@ app.service('quoteService', function() {
 
 	};
 	this.removeData = function(data){
-		var index = quotesArray.indexOf(data);
-		if(index !== -1){
-			quotesArray.slice(index, 1);
+		for(var i = 0; i<quotesArray.length; i++) {
+			if(data === quotesArray[i].text){
+				quotesArray.splice(i,1);
+			}
 		}
 	};
 	

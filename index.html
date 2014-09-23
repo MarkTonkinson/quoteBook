@@ -10,13 +10,12 @@
 	<script src="js/mainCtrl.js"></script>
 	<script src="js/service.js"></script>
 	
+	
 	<body ng-controller="mainCtrl">
-		<h2>Favorite Quotes</h2>
-		{{test}}
-		<button ng-click="addBoxAppear = !addBoxAppear">Add Quote</button>
-		<button ng-click="removeBoxAppear = !removeBoxAppear">Remove Quote</button>
-		<button ng-click="filterBoxAppear = !filterBoxAppear">Find Quote</button>
+		<p>Favorite Quotes</p>
 		
+		<aside>
+		<button ng-click="addBoxAppear = !addBoxAppear">Add Quote</button>
 		<!---add quote input box-->
 		<div ng-show="addBoxAppear">
 			
@@ -27,27 +26,33 @@
 			<button ng-click="addData()">Submit</button>
 		</div>
 
+
+		<button ng-click="removeBoxAppear = !removeBoxAppear">Remove Quote</button>
 		<!---remove quote input box-->
 		<div ng-show="removeBoxAppear">
 			
-			<input type="text" placeholder="# of quote to remove?" ng-model="removeDataText"></input>
+			<input type="text" placeholder="Remove by quote" ng-model="removeDataText"></input>
 			
 	
 			<button ng-click="removeData()">Submit</button>
 		</div>
 
+
+		<button ng-click="filterBoxAppear = !filterBoxAppear">Find Quote</button>
 		<!---filter quote input box-->
 		<div ng-show="filterBoxAppear">
 			Find quote by word or author:
 			<input type="text" placeholder="Find By Author" ng-model="filterInput"></input>
 			
 		</div>
+		</aside>
 
-		<ol>
+		<div class ="quotes">
+		<ul>
 			<li ng-repeat='quote in quotes | filter: filterInput'>{{quote.text + " - " + quote.author}}</li>
 			
-		</ol>
-		
+		</ul>
+		<div>
 		
 	</body>
 

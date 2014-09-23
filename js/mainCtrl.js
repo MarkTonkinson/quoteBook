@@ -1,7 +1,7 @@
 var app = angular.module('quoteBook');
 
 app.controller('mainCtrl', function($scope, quoteService){
-	$scope.test = "my test";
+	
 	
 	//$scope.quotes = quoteService.getData(); //This works, but not the other?
 	$scope.addBoxAppear = false;
@@ -10,11 +10,13 @@ app.controller('mainCtrl', function($scope, quoteService){
 
 	$scope.addData = function() {
 		quoteService.addData($scope.addQuoteText, $scope.addAuthorText);//get it pushed in the service
+		$scope.addBoxAppear= !$scope.addBoxAppear;
+		
 	}	
 
 	$scope.removeData = function(){
-		debugger;
 		quoteService.removeData($scope.removeDataText);
+		$scope.removBoxAppear = false;
 	}
 
 	$scope.filter
@@ -22,7 +24,6 @@ app.controller('mainCtrl', function($scope, quoteService){
 
 	var getData = function(){
 		$scope.quotes = quoteService.getData();
-		
 	}
 	getData();
 
