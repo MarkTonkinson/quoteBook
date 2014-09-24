@@ -15,7 +15,7 @@
 		<p>Favorite Quotes</p>
 		
 		<aside>
-		<button ng-click="addBoxAppear = !addBoxAppear">Add Quote</button>
+		<button ng-click="addBoxAppear = !addBoxAppear; hideInputAdd()">Add Quote</button>
 		<!---add quote input box-->
 		<div ng-show="addBoxAppear">
 			
@@ -27,7 +27,7 @@
 		</div>
 
 
-		<button ng-click="removeBoxAppear = !removeBoxAppear">Remove Quote</button>
+		<button ng-click="removeBoxAppear = !removeBoxAppear; hideInputRemove()">Remove Quote</button>
 		<!---remove quote input box-->
 		<div ng-show="removeBoxAppear">
 			
@@ -38,19 +38,20 @@
 		</div>
 
 
-		<button ng-click="filterBoxAppear = !filterBoxAppear">Find Quote</button>
+		<button ng-click="filterBoxAppear = !filterBoxAppear; hideInputFilter()">Find Quote</button>
 		<!---filter quote input box-->
-		<div ng-show="filterBoxAppear">
+		<div class="filter" ng-show="filterBoxAppear">
 			Find quote by word or author:
-			<input type="text" placeholder="Find By Author" ng-model="filterInput"></input>
+			<input type="text" placeholder="Type a word or name . . ." ng-model="filterInput"></input>
 			
 		</div>
 		</aside>
 
 		<div class ="quotes">
+			
 		<ul>
 			<li ng-repeat='quote in quotes | filter: filterInput'>{{quote.text + " - " + quote.author}}</li>
-			
+			<div class="scrollNotifier">Scroll For More Quotes</div>
 		</ul>
 		<div>
 		
